@@ -1,0 +1,437 @@
+<section class="container-lg" id="topOfPage">
+  <div id="topPanel" class="light">
+  <h1>Dice Roll Simulator</h1>
+  <div class="wrap">
+    <button class="btn-success" id="compare">Compare Mode</button>
+    <button class="hidden btn-success" id="solo">Singular Mode</button>
+   <div>
+   </div>
+  </div>
+  <div class="buttonContain">
+    <a href="#results">To Results</a>
+    <a href="#botOfPage" id="hideBot1" class="hidden"> &#8595;To Bottom &#8595;</a>
+  </div>
+  </div>
+
+  <div id="diceContain">
+    <form id="diceForm" class="form">
+      <h2>Offensive Profile 1</h2>
+      <h3>Hit Section</h3>
+      <div class="wrapper">
+      <div>
+        <label for="att">Attack Number: </label>
+        <input type="text" name="att" id="att" value="10" size="5">
+      </div>
+      <div>
+        <label for="wsbs">Weapon/ Balistic Skill: </label>
+        <input type="number" name="wsbs" id="wsbs" min="1" max="6" value="3">
+      </div>
+      <div>
+        <label for="autoH">Automatically hits: </label>
+        <select name="autoH" id="autoH" form="diceForm">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+      </div>
+      <div>
+        <label for="reH1">Reroll hits of 1: </label>
+        <select name="reH1" id="reH1" form="diceForm">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+         </select>
+      </div>
+      <div>
+        <label for="posHit">Positive hit modifier: </label>
+        <input type="number" name="posHit" min="0" max="6" id="posHit" value="0">
+      </div>
+  <div>
+    <label for="negHit">Negative hit modifier: </label>
+    <input type="number" name="negHit" id="negHit" min="0" max="6" value="0">
+  </div>
+</div>
+  <br>
+
+  <fieldset>
+  <legend>Sixes To Hit</legend>
+  <div class="wrapper">
+    <div>
+      <label for="autoWnd">Automatically wounds: </label>
+      <select name="autoWnd" id="autoWnd" form="diceForm">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select> 
+    </div>
+    <div>
+      <label for="gen1Ex">Generate 1 extra hit: </label>
+        <select name="gen1Ex" id="gen1Ex" form="diceForm">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>  
+    </div>
+    <div>
+      <label for="gen2Ex">Generate 2 extra hits: </label>
+      <select name="gen2Ex" id="gen2Ex" form="diceForm">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    
+    <div class='fontSm'>
+      <label for="mw6">Mortal wound instead of damage: </label>
+      <select name="mw6" id="mw6" form="diceForm">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    <div class='fontSm'>
+      <label for="adMw6">Mortal wound in additon to damage: </label>
+      <select name="adMw6" id="adMw6" form="diceForm">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+  </div>
+  </fieldset>
+
+  <h3>Wound Section</h3>
+  <div class="wrapper">
+  <div>
+    <label for="str">Strength: </label>
+      <input type="number" name="str" min="1" max="100" id="str" value="4">
+  </div>
+  <div>
+    <label for="posWnd">Positive wound modifier: </label>
+    <input type="number" name="posWnd" id="posWnd" min="0" max="6" value="0">
+  </div>
+  <div>
+    <label for="negWnd">Negative wound modifier: </label>
+    <input type="number" name="negWnd" id="negWnd" min="0" max="6" value="0">
+  </div>
+  <div>
+    <label for="reW1">Reroll Wounds of 1: </label>
+    <select name="reW1" id="reW1" form="diceForm">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </select>
+  </div>
+  </div>
+  <h3>Damage Section</h3>
+  <div class="wrapper">
+  <div>
+    <label for="weapDmg">Weapon damage: </label>
+    <input type="text" name="weapDmg" id="weapDmg" value="1" size="5">
+  </div>
+  <div>
+    <label for="ap">Armour penetration:</label>
+    <input type="number" name="ap" id="ap" min="0" max="10" value="0">
+  </div>
+  <div>
+    <label for="spill">Spill damage: </label>
+    <select name="spill" id="spill" form="diceForm">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </select>
+  </div>
+</div>
+
+  <h2>Defensive Profile 1</h2>
+  <div class="wrapper">
+  <div>
+    <label for="hp">Health points: </label>
+    <input type="number" name="hp" id="hp" min="1" max="500" value="1">
+  </div>
+  <div>
+    <label for="tough">Toughness: </label>
+    <input type="number" name="tough" id="tough" min="1" max="100" value="4">
+  </div>
+  <div>
+    <label for="sv">Armour Save: </label>
+    <input type="number" name="sv" id="sv" min="1" max="6" value="3">
+  </div>
+  <div>
+    <label for="invul">Invulnerable Save: </label>
+    <select name="invul" id="invul" form="diceForm">
+      <option value="0">None</option>
+      <option value="2">On 2+</option>
+      <option value="3">On 3+</option>
+      <option value="4">On 4+</option>
+      <option value="5">On 5+</option>
+      <option value="6">On 6+</option>
+    </select>
+  </div>
+  <div>
+    <label for="cover">Cover Modifier: </label>
+    <input type="number" name="cover" id="cover" min="0" max="6" value="0">
+  </div>
+  <div>
+    <label for="reSv">Reroll Failed Saves: </label>
+    <select name="reSv" id="reSv" form="diceForm">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </select>
+  </div>
+  <div>
+    <label for="shrug">Shrug Value: </label>
+    <select name="shrug" id="shrug" form="diceForm">
+      <option value="0">None</option>
+      <option value="5">On 5+</option>
+      <option value="6">On 6+</option>
+    </select>
+  </div>
+  </div>
+  <div class="subBut">
+    <input class="btn-success" name="submit" type="submit" value="Simulate Rolls"/>
+  </div>
+  </form>
+  <div class="resWrap">
+    <div class="wrap">
+    <div class="result light" id="results">
+      <div id="hideScore1" class="hidden">
+        <h5>Score:&nbsp<h5> 
+      <div id="firstScore"></div>
+      </div>
+      <h3>Profile 1 Results</h3>
+      <div id="hitValT"></div>
+      <div id="hRollT"></div>
+      <div id="hReRollT"></div>
+      <div id="dMWT"></div>
+      <div id="wValT"></div>
+      <div id="wRollT"></div>
+      <div id="wReNumT"></div>
+      <div id="wReRollT"></div>
+      <div id="wSucT"></div>
+      <div id="svT"></div>
+      <div id="svRollsT"></div>
+      <div id="svReRollsT"></div>
+      <div id="finalDmgT"></div>
+      <div id="mwDiv"></div>
+      <div id="killT"></div>
+      <div id="actualKT"></div>
+    </div>
+    </div>
+    <div class="buttonContain light" id="midButs">
+      <div class="butGrid">
+        <button class="hidden" id="subBoth">Compare&nbsp;&nbsp;&nbsp;<i class="fas fa-dice row"></i> </button>
+        <button class="hidden" id="sub100">Compare x100&nbsp;&nbsp;&nbsp;<i class="fas fa-dice row"></i> </button>
+        <button class="hidden" id="process">Processing...</button>
+        <button class="hidden" id="resetBtn">Reset Score</button>
+      </div>
+    <div class="buttonContain">
+      <a href="#topOfPage">	&#8593; To Top 	&#8593;</a>
+      <a href="#botOfPage" id="hideBot2" class="hidden">&#8595; To Bottom &#8595;</a>
+    </div>
+  
+    </div>
+
+    <div class="wrap">
+    <div class="hidden result light" id="results2">
+      <div class="wrap">
+        <h5>Score:&nbsp<h5> 
+      <div id="secondScore"></div>
+      </div>
+      <h3>Profile 2 Results</h3>
+      <div id="hitValT2"></div>
+      <div id="hRollT2"></div>
+      <div id="hReRollT2"></div>
+      <div id="dMWT2"></div>
+      <div id="wValT2"></div>
+      <div id="wRollT2"></div>
+      <div id="wReNumT2"></div>
+      <div id="wReRollT2"></div>
+      <div id="wSucT2"></div>
+      <div id="svT2"></div>
+      <div id="svRollsT2"></div>
+      <div id="svReRollsT2"></div>
+      <div id="finalDmgT2"></div>
+      <div id="mwDiv2"></div>
+      <div id="killT2"></div>
+      <div id="actualKT2"></div>
+    </div>
+  </div>
+  </div>
+
+
+  <form class="hidden form" id="diceForm2">
+    <div class="subBut">
+      <input class="button btn-success" name="submit" type="submit" value="Simulate Rolls"/>
+    </div>
+    <h2>Offensive Profile 2</h2>
+    <h3>Hit Section</h3>
+    <div class="wrapper">
+    <div>
+      <label for="att">Attack Number: </label>
+      <input type="text" name="att" id="att2" value="10" size="5">
+    </div>
+    <div>
+      <label for="wsbs"> Weapon Skill/ Balistic Skill: </label>
+      <input type="number" name="wsbs" min="1" max="6" id="wsbs2" value="3">
+    </div>
+
+    <div>
+      <label for="autoH">Automatically hits: </label>
+      <select name="autoH" id="autoH2" form="diceForm2">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="reH1">Reroll hits of 1: </label>
+        <select name="reH1" id="reH12" form="diceForm2">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+    </div>
+    <div>
+      <label for="posHit">Positive hit modifier: </label>
+      <input type="number" name="posHit" min="0" max="6" id="posHit2" value="0">
+    </div>
+    <div>
+      <label for="negHit">Negative hit modifier: </label>
+      <input type="number" name="negHit" min="0" max="6" id="negHit2" value="0">
+    </div>
+    </div>
+    <br>
+    <fieldset>
+      <legend>Sixes To Hit</legend>
+      <div class="wrapper">
+      
+          <div>
+          <label for="autoWnd">Automatically wounds: </label>
+          <select name="autoWnd" id="autoWnd2" form="diceForm2">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select> 
+        </div>
+
+        <div>
+          <label for="gen1Ex">Generate 1 extra hit: </label>
+            <select name="gen1Ex" id="gen1Ex2" form="diceForm2">
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>  
+        </div>
+        <div>
+          <label for="gen2Ex">Generate 2 extra hits: </label>
+          <select name="gen2Ex" id="gen2Ex2" form="diceForm2">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+
+        <div class='fontSm'>
+          <label for="mw6">Mortal wound instead of damage: </label>
+          <select name="mw6" id="mw62" form="diceForm2">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+
+        <div class='fontSm'>
+          <label for="adMw6">Mortal wound In additon to damage: </label>
+          <select name="adMw6" id="adMw62" form="diceForm2">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+      
+      </div>
+    </fieldset>
+
+    <h3>Wound Section</h3>
+    <div class="wrapper">
+    <div>
+      <label for="str">Strength: </label>
+        <input type="number" name="str" min="1" max="100" id="str2" value="4">
+    </div>
+    <div>
+      <label for="posWnd">Positive wound modifier: </label>
+      <input type="number" name="posWnd" min="0" max="6" id="posWnd2" value="0">
+    </div>
+    <div>
+      <label for="negWnd">Negative wound modifier: </label>
+      <input type="number" name="negWnd" min="0" max="6" id="negWnd2" value="0">
+    </div>
+    <div>
+      <label for="reW1">Reroll Wounds of 1: </label>
+      <select name="reW1" id="reW12" form="diceForm2">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    </div>
+
+
+    <h3>Damage Section</h3>
+    <div class="wrapper">
+    <div>
+      <label for="weapDmg">Weapon damage: </label>
+      <input type="text" name="weapDmg" min="1" max="100" id="weapDmg2" value="1" size="5">
+    </div>
+    <div>
+      <label for="ap">Armour penetration:</label>
+      <input type="number" name="ap" min="0" max="10" id="ap2" value="0">
+    </div>
+    <div>
+      <label for="spill">Spill damage: </label>
+      <select name="spill" id="spill2" form="diceForm2">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    </div>
+
+    <h2>Defensive Profile 2</h2>
+    <div class="wrapper">
+    <div>
+      <label for="hp">Health points: </label>
+      <input type="number" name="hp" min="1" max="500" id="hp2" value="1">
+    </div>
+    <div>
+      <label for="tough">Toughness: </label>
+      <input type="number" name="tough" min="1" max="100" id="tough2" value="4" >
+    </div>
+    <div>
+      <label for="sv">Armour Save: </label>
+      <input type="number" name="sv" min="1" max="6" id="sv2" value="3">
+    </div>
+    <div>
+      <label for="invul">Invulnerable Save: </label>
+      <select name="invul" id="invul2" form="diceForm2">
+        <option value="0">None</option>
+        <option value="2">On 2+</option>
+        <option value="3">On 3+</option>
+        <option value="4">On 4+</option>
+        <option value="5">On 5+</option>
+        <option value="6">On 6+</option>
+      </select>
+    </div>
+    <div>
+      <label for="cover">Cover Modifier: </label>
+      <input type="number" name="cover" min="0" max="6" id="cover2" value="0">
+    </div>
+    <div>
+      <label for="reSv">Reroll Failed Saves: </label>
+      <select name="reSv" id="reSv2" form="diceForm2">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    <div>
+      <label for="shrug">Shrug Value: </label>
+      <select name="shrug" id="shrug2" form="diceForm2">
+        <option value="0">None</option>
+        <option value="5">On 5+</option>
+        <option value="6">On 6+</option>
+      </select>
+    </div>
+    </div>
+  </form>
+  <br>
+
+  <div id="botOfPage" class="hidden buttonContain light">
+    <a href="#results" class="scroll-link">To Results</a>
+    <a href="#topOfPage" class="scroll-link">&#8593; To Top &#8593;</a>
+  </div>
+
+</section>

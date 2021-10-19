@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script defer src="/node_modules/@fortawesome/fontawesome-free/js/brands.js"></script>
+    <script defer src="/node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
+    <script defer src="/node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/b98e2a69c0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <a class="logo" href="/">40k<span class="higherS">Compare</span></a>
+        <div class="openMenu"><i class="fa fa-bars"></i></div>
+        <ul class="mainMenu">
+            <div class="closeMenu"><i class="fa fa-times"></i></div>
+            <li><a href="/dicesim">Dice Simulator</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li> <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Themes
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <button class="dropdown-item" id="def">Default</button>
+                  <button class="dropdown-item" id="ultra">Ultra</button>
+                  <button class="dropdown-item" id="machine">Machine God</button>
+                  <button class="dropdown-item" id="plague">Plague</button>
+                </div>
+                </div>
+            </li>
+            <li>
+                <button id="ldMode" class="btn">
+                    <svg id="lightMode" style="width:40px;height:40px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M3.55,18.54L4.96,19.95L6.76,18.16L5.34,16.74M11,22.45C11.32,22.45 13,22.45 13,22.45V19.5H11M12,5.5A6,6 0 0,0 6,11.5A6,6 0 0,0 12,17.5A6,6 0 0,0 18,11.5C18,8.18 15.31,5.5 12,5.5M20,12.5H23V10.5H20M17.24,18.16L19.04,19.95L20.45,18.54L18.66,16.74M20.45,4.46L19.04,3.05L17.24,4.84L18.66,6.26M13,0.55H11V3.5H13M4,10.5H1V12.5H4M6.76,4.84L4.96,3.05L3.55,4.46L5.34,6.26L6.76,4.84Z" />
+                    </svg>
+                    <svg id="darkMode" class="hidden" style="width:40px;height:40px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 2A9.91 9.91 0 0 0 9 2.46A10 10 0 0 1 9 21.54A10 10 0 1 0 12 2Z"/>
+                    </svg>
+            </li>
+        </ul>
+                </button>
+        
+    </nav>
+    <%- body %>
+
+    <footer>
+        <br>
+        <a class="logo" href="/">40k<span class="higherS">Compare</span></a>
+        <div><p>40kCompare</p></div>
+        <div><p>Created by: Jonathan Noble</p></div>
+        <div><p>© 2021</p></div>
+        <br>
+    </footer>
+    <!-- Return to try to get JS/popper to work with download -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="jsmath/mainstat.js"></script>
+    <script src="jsmath/mainstat2.js"></script>
+
+</body>
+</html>
+

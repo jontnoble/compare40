@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@500&family=Oswald:wght@300&family=Roboto:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
+
+/* General CSS */
+* {
+    margin: none;
+}
+
+.hidden {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 18px;
+  }
+
+h1 {
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+h3 {
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+    margin-top: 22px;
+}
+
+section a {
+    padding: 8px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    margin: 2px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body button {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+
+input[type='number'], input[type='text'], select {
+    width: 70px;
+    float: right;
+    line-height: 20px;
+} 
+
+label {
+    margin: 0 0 0 80px;
+}
+
+input[type=submit] {
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color:rgb(27, 160, 73);
+    border: rgb(25, 25, 25) 2px solid;
+    color:rgb(25, 25, 25);
+}
+
+img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin: auto;
+}
+
+legend {
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    background: linear-gradient(90deg, rgba(25,25,25,1) 60%, rgba(92,92,92,1) 80%, rgba(144,144,144,1) 100%);
+    height: auto;
+    margin-top: 100px;
+}
+
+  /* Nav Section */
+
+  nav {
+    background: linear-gradient(90deg, rgba(25,25,25,1) 60%, rgba(92,92,92,1) 80%, rgba(144,144,144,1) 100%);
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 60px;
+}
+nav .mainMenu {
+    display: flex;
+    list-style: none;
+}
+nav .mainMenu li a {
+    display: inline-block;
+    padding: 25px 20px 25px 0;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+nav .mainMenu .closeMenu, .icons i {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+/* Hover/Focus Section */
+
+a:hover, nav .mainMenu a:hover, footer .logo:hover {
+    transition: 0.3s ease-in;
+    transform: translateY(4px);
+    text-decoration: underline;
+    color: white;
+  }
+  .buttonContain a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: white
+}
+
+#resetBtn:hover {
+    transition: .3s ease-in;
+    color: white;
+    background:rgb(252, 19, 19);
+}
+
+#compare:hover, #sub100:hover, #sub100:focus, #solo:hover, #subBoth:hover, #compare:focus, #solo:focus, #subBoth:focus, input[type=submit]:hover, input[type=submit]:focus {
+    transition: ease-in-out 0.3s;
+    background-color:rgb(27, 190, 73);
+    color: white;
+}
+
+.buttonContain a:hover {
+    text-decoration: underline;
+    color: white;
+    cursor: pointer;
+}
+
+.logo:hover{
+    transition: .3s ease-in;
+    color: white;
+    text-decoration: underline;
+  }
+
+
+/* Class Section */
+
+.slideItem {
+    border-radius: 20px;
+    padding: 100px;
+    max-width: 700px;
+    min-width: 300px;
+    margin: auto;
+    height: 500px;
+    color: white;
+    background: rgb(25,25,25);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 16px 0 0 0;
+  cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.result {
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    overflow:auto;
+    width: 300px;
+    text-align: left;
+}
+
+.light {
+    background: rgb(224,224,224);
+    color: black;
+    border: 2px solid black;
+}
+
+.carousel-inner {
+    margin: auto;
+}
+
+form.dark, .dark {
+    color: white;
+    background: rgb(25,25,25);
+    border: 2px solid rgb(27, 160, 73);
+}
+
+.fontSm {
+    font-size: 14px;
+}
+
+.subBut {
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+}
+.wrap {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.form {
+    background-color:rgb(224,224,224);
+    border:2px solid;
+    padding: 40px 60px 40px 20px;
+    line-height: 35px;
+    border-radius: 2rem;
+    margin: 10px 0 10px 0;
+}
+
+.buttonContain {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.butGrid {
+    display: grid;
+    grid-template-columns: .5fr;
+    justify-content: center;
+}
+
+/* ID Section */
+
+.aboutPg {
+    background-color: black;
+    width: 500px;
+    height: 500px;
+    color: white;
+    padding: 100px;
+    margin: 10px;
+}
+
+#topPanel {
+    border-radius: 20px;
+    padding: 10px;
+    margin: auto;
+    max-width: 600px;
+}
+#midButs {
+    border-radius: 10px;
+    margin: auto;
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    padding: 5px;
+}
+
+ #botOfPage {
+     margin: auto;
+     width: 300px;
+     padding-bottom: 20px;
+ }
+
+#diceForm {
+    margin-top: 30px;
+}
+
+
+#subBoth, #sub100 {
+    width: 250px;
+    margin: 10px;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    background-color:rgb(27, 170, 73);
+    border:rgb(43, 40, 40) 2px solid;
+    color:rgb(43, 40, 40);
+}
+
+#process {
+    width: 250px;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+    background-color:rgb(27, 190, 73);
+}
+
+#resetBtn {
+    width: 250px;
+    margin: 10px;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(223, 32, 32);
+    border:rgb(43, 40, 40) 2px solid;
+    color:rgb(43, 40, 40);
+}
+
+#compare, #solo{
+    background-color:rgb(27, 170, 73);
+    padding: 15px;
+    text-align: center;
+    justify-content: center;
+    color: rgb(43, 40, 40);
+    border:rgb(43, 40, 40) solid 2px;
+    border-radius: 15px;
+}
+
+/* Score Colors */
+
+.higherS {
+    color:rgb(27, 170, 73);
+}
+.lowerS {
+    color: rgb(223, 32, 32);
+}
+.closeS {
+    color: black;
+}
+
+/* Light Mode/ Dark Mode */
+
+#lightMode, #darkMode {
+    padding: 0 0 10px 0;
+}
+
+#ldMode {
+    display: flex;
+    justify-content: center;
+    background: white;
+    height: 42.5px;
+    width: 42.5px;
+}
+
+    /* Themes */
+
+.ultra {
+    background-color: rgb(36,122,192);
+}
+.machine {
+    background-color: rgb(187,72,72);
+}
+.plague {
+    background-color: rgb(136, 132, 13);
+}
+
+  /* Media Queries */
+
+@media(max-width:300px) {
+    a.logo {
+        margin-top: 10px;
+        font-size: 1.6rem;
+    }
+}
+
+@media(min-width: 800px) and (max-width: 1250px){
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(min-width: 800px) {
+    .resWrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        min-height: 350px;
+
+    }
+    .buttonContain {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media(min-width: 1250px){
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .buttonContain {
+        grid-template: 1fr 1fr;
+    }  
+}
+
+@media(max-width: 900px){
+    nav .mainMenu {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgb(25, 25, 25);
+        transition: top 1s ease;
+        display: none;
+    }
+
+    form label {
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    nav .mainMenu .closeMenu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+    }
+    nav .openMenu {
+        display: block;
+    }
+    nav .mainMenu li a:hover {
+        transition: .4s;
+    }
+}
+
+
+
+

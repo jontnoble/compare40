@@ -1,0 +1,278 @@
+//const str = 4; done
+//const hitmod = true; done
+//const attacks = 10; done
+//const dmg = 1; 
+//const ap = 1; done
+//const cover = 1; done
+//const wnd = 1; done
+//const t = 4; done
+//const sv = 5; done
+//const mwOn6 = false;
+//const gen1ex = false;
+//const gen2ex = false;
+//const hitAutoWd = false
+//const invuln = true; done
+
+function submitData(attacks, wsbs, hitmod, str, tough, sv, cover, ap, invuln, shrug, tarhp, weapdmg) {
+  let hit = 0;
+  let hitArr = [];
+  let wsbsVal = wsbs;
+  let woundArr = [];
+  let woundVal = 0;
+  let wounded = 0;
+  let toSaveArr = [];
+  let damaged = 0;
+  let preSave = sv - cover + ap;
+  let shrugDmg = 0;
+  let shrugArr = [];
+  
+// Hit Calculation Section
+
+  if (hitmod === true) {
+    wsbsVal++;
+  }
+  console.log(`Final to hit value is ${wsbsVal}`)
+
+  for (let i = 0; i < attacks; i++) {
+    let randRoll = function randRoll() {
+      let num = Math.floor(Math.random() * 6 + 1);
+      hitArr.push(num);
+    };
+    randRoll();
+  }
+  for (const doesHit of hitArr) {
+    if (doesHit >= wsbsVal) {
+      hit++;
+    }
+  }
+  console.log(`The hit rolls are ${hitArr}.`);
+  console.log(`${hit} hits are scored`);
+
+//Wound Calculation Section
+
+  if (str === tough) {
+    woundVal = 4;
+  } else if (str >= tough * 2) {
+    woundVal = 2;
+  } else if (tough >= str * 2) {
+    woundVal = 6;
+  } else if (str < tough) {
+    woundVal = 5;
+  } else if (str > tough) {
+    woundVal = 3;
+  }
+  console.log(`To wound value is ${woundVal}`);
+
+  for (let i = 0; i < hit; i++) {
+    let randRoll = function randRoll() {
+      let num = Math.floor(Math.random() * 6 + 1);
+      woundArr.push(num);
+    };
+    randRoll();
+  }
+  for (const doesWound of woundArr) {
+    if (doesWound >= woundVal) {
+      wounded++;
+    }
+  }
+  console.log(`The wound rolls are ${woundArr}`);
+  console.log(`${wounded} wounds went through`);
+
+  //Save Calculation Section
+  
+  for (let i = 0; i < wounded; i++) {
+    let randRoll = function randRoll() {
+      let num = Math.floor(Math.random() * 6 + 1);
+      toSaveArr.push(num);
+    };
+    randRoll();
+  }
+  for (const doesSave of toSaveArr) {
+    if (doesSave < preSave && doesSave < invuln) {
+      damaged++;
+    } else if (doesSave < preSave && invuln === 0) {
+      damaged++;
+    }
+   
+}
+console.log(`${preSave} presave value`)
+console.log(`${invuln} inulnerable save`)
+console.log(`${toSaveArr} rolls`)
+console.log(`${damaged} damage`)
+
+if(shrug > 4) {
+  for (let i = 0; i < damaged; i++) {
+    let randRoll = function randRoll() {
+      let num = Math.floor(Math.random() * 6 + 1);
+      shrugArr.push(num);
+    };
+    randRoll();
+  }
+  for (const doesShrug of shrugArr) {
+    if (doesShrug < shrug) {
+      shrugDmg++;
+    }
+   
+}
+console.log(`shrug rolls are ${shrugArr}`);
+console.log(`final damage after shrug is ${shrugDmg}`);
+}
+
+}
+  
+  if(weapdmg > tarhp) {
+    console.log(`${damaged * tarhp / tarhp} models are killed!`)
+} else {
+    console.log(` ${damaged * weapdmg / tarhp} models are killed!`); 
+}
+
+
+
+
+
+
+
+shruggggg Calculation
+
+if(shrug > 4) {
+  for (let i = 0; i < damaged; i++) {
+    let randRoll = function randRoll() {
+      let num = Math.floor(Math.random() * 6 + 1);
+      shrugArr.push(num);
+    };
+    randRoll();
+  }
+  for (const doesShrug of shrugArr) {
+    if (doesShrug < shrug) {
+      shrugDmg++;
+    }
+   
+}
+console.log(`Shrug rolls for weapon damage are ${shrugArr}`);
+console.log(`Shrug rolls for Mortal Wounds are ${shrugArrMW}`)
+console.log(`Weapon shrugs passed is ${shrugDmg}`)
+console.log(`Mortal Wounds shrugs passed is ${shrugMWDmg}`)
+let shrugWeap1 = shrugDmg * weapdmg / tarhp;
+let shrugMWDiv1 = shrugMWDmg / tarhp;
+let shrugWeap2 = shrugDmg * tarhp / tarhp;
+
+if(weapdmg > tarhp && shrug > 2) {
+  console.log(`${shrugWeap1 + shrugMWDiv } models are killed 1`)
+} else if(weapdmg <= tarhp && shrug > 2) {
+  console.log(`${shrugWeap2 + shrugMWDiv1} models are killed 2 `)
+}
+else if(weapdmg > tarhp && shrug === 0) {
+ console.log(`${damaged * tarhp / tarhp + MWdiv} models are killed 3!`)
+} else {
+ console.log(` ${damaged * weapdmg / tarhp + MWdiv} models are killed 4!`); 
+}
+
+
+}
+
+    if(shrug > 4 && dirMW >= 1) {
+    for (let i = 0; i < dirMW; i++) {
+    let randRoll = function randRoll() {
+      let num = Math.floor(Math.random() * 6 + 1);
+      shrugArrMW.push(num);
+    };
+    randRoll();
+  }
+  for (const doesShrug of shrugArrMW) {
+    if (doesShrug < shrug) {
+      shrugMWDmg++;
+    }
+}
+  let MWdiv = dirMW / tarhp;
+  console.log(`Shrug rolls for weapon damage are ${shrugArr}`);
+  console.log(`Shrug rolls for Mortal Wounds are ${shrugArrMW}`)
+  console.log(`Weapon shrugs passed is ${shrugDmg}`)
+  console.log(`Mortal Wounds shrugs passed is ${shrugMWDmg}`)
+  let shrugWeap1 = shrugDmg * weapdmg / tarhp;
+  let shrugMWDiv1 = shrugMWDmg / tarhp;
+  let shrugWeap2 = shrugDmg * tarhp / tarhp;
+  
+
+ if(weapdmg > tarhp && shrug > 2) {
+   console.log(`${shrugWeap1 + shrugMWDiv } models are killed 1`)
+ } else if(weapdmg <= tarhp && shrug > 2) {
+   console.log(`${shrugWeap2 + shrugMWDiv1} models are killed 2 `)
+ }
+else if(weapdmg > tarhp && shrug === 0) {
+  console.log(`${damaged * tarhp / tarhp + MWdiv} models are killed 3!`)
+} else {
+  console.log(` ${damaged * weapdmg / tarhp + MWdiv} models are killed 4!`); 
+}
+
+}
+
+
+/* 
+
+if(shrug > 4) {
+  for (let i = 0; i < damaged; i++) {
+    let randRoll = function randRoll() {
+      let num = Math.floor(Math.random() * 6 + 1);
+      shrugArr.push(num);
+    };
+    randRoll();
+  }
+  for (const doesShrug of shrugArr) {
+    if (doesShrug < shrug) {
+      shrugDmg++;
+    }
+   
+}
+console.log(`Shrug rolls for weapon damage are ${shrugArr}`);
+console.log(`Shrug rolls for Mortal Wounds are ${shrugArrMW}`)
+console.log(`Weapon shrugs passed is ${shrugDmg}`)
+console.log(`Mortal Wounds shrugs passed is ${shrugMWDmg}`)
+let shrugWeap1 = shrugDmg * weapdmg / tarhp;
+let shrugMWDiv1 = shrugMWDmg / tarhp;
+let shrugWeap2 = shrugDmg * tarhp / tarhp;
+
+if(weapdmg > tarhp && shrug > 2) {
+  console.log(`${shrugWeap1 + shrugMWDiv } models are killed 1`)
+} else if(weapdmg <= tarhp && shrug > 2) {
+  console.log(`${shrugWeap2 + shrugMWDiv1} models are killed 2 `)
+}
+else if(weapdmg > tarhp && shrug === 0) {
+ console.log(`${damaged * tarhp / tarhp + MWdiv} models are killed 3!`)
+} else {
+ console.log(` ${damaged * weapdmg / tarhp + MWdiv} models are killed 4!`); 
+}
+
+
+}
+
+    if(shrug > 4 && dirMW >= 1) {
+    for (let i = 0; i < dirMW; i++) {
+    let randRoll = function randRoll() {
+      let num = Math.floor(Math.random() * 6 + 1);
+      shrugArrMW.push(num);
+    };
+    randRoll();
+  }
+  for (const doesShrug of shrugArrMW) {
+    if (doesShrug < shrug) {
+      shrugMWDmg++;
+    }
+}
+  let MWdiv = dirMW / tarhp;
+  let shrugWeap1 = shrugDmg * weapdmg / tarhp;
+  let shrugMWDiv1 = shrugMWDmg / tarhp;
+  let shrugWeap2 = shrugDmg * tarhp / tarhp;
+  
+
+ if(weapdmg > tarhp && shrug > 2) {
+   console.log(`${shrugWeap1 + shrugMWDiv } models are killed 1`)
+ } else if(weapdmg <= tarhp && shrug > 2) {
+   console.log(`${shrugWeap2 + shrugMWDiv1} models are killed 2 `)
+ }
+else if(weapdmg > tarhp && shrug === 0) {
+  console.log(`${damaged * tarhp / tarhp + MWdiv} models are killed 3!`)
+} else {
+  console.log(` ${damaged * weapdmg / tarhp + MWdiv} models are killed 4!`); 
+}
+
+}*/

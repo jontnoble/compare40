@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <h1>This is a Test</h1>
+    <form id=diceForm class="form">
+        <div>
+            <label for="att">Attack Number: </label>
+            <input type="text" name="att" id="att" value="10">
+          </div>
+          <div>
+            <label for="wsbs"> Weapon Skill/ Balistic Skill: </label>
+            <input type="number" name="wsbs" id="wsbs" value="3">
+          </div>
+          <div>
+        
+            <label for="autoH">Automatically hits: </label>
+            <select name="autoH" id="autoH" form="diceForm">
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+            <label for="autoWnd">Automatically hits: </label>
+            <select name="autoWnd" id="autoWnd" form="diceForm">
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+            <input class="button" name="submit" type="submit" value="submit" />
+    </form>
+
+    <script src="../public/js/test.js"></script>
+</body>
+</html>
+

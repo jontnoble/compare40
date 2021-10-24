@@ -54,7 +54,7 @@ body button {
     font-size: 1.3rem;
 }
 
-input[type='number'], input[type='text'], select {
+input[type='number'], input[type='text'], input[type='email'], #form_need {
     width: 70px;
     float: right;
     line-height: 20px;
@@ -104,6 +104,7 @@ footer {
     justify-content: space-evenly;
     margin-bottom: 60px;
 }
+
 nav .mainMenu {
     display: flex;
     list-style: none;
@@ -264,6 +265,7 @@ form.dark, .dark {
     color: white;
     padding: 100px;
     margin: 10px;
+    text-overflow: wrap;
 }
 
 #topPanel {
@@ -439,6 +441,30 @@ form.dark, .dark {
     nav .mainMenu li a:hover {
         transition: .4s;
     }
+}
+
+/* Contact */
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 80%;
+    margin-left: 3px
+}
+
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px
+}
+
+.card {
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+#form_name, #form_email {
+    width: 260px;
 }
 
 

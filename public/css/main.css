@@ -39,8 +39,8 @@ h3 {
 
 section a {
     padding: 8px;
-    color: white;
-    background-color: black;
+    background-color: rgb(27, 160, 73);
+    color: black;;
     border-radius: 5px;
     margin: 2px;
     text-decoration: none;
@@ -54,7 +54,7 @@ body button {
     font-size: 1.3rem;
 }
 
-input[type='number'], input[type='text'], input[type='email'], #form_need {
+input[type='number'], input[type='text'], input[type='email'], select {
     width: 70px;
     float: right;
     line-height: 20px;
@@ -92,8 +92,8 @@ footer {
     color: white;
     background: linear-gradient(90deg, rgba(25,25,25,1) 60%, rgba(92,92,92,1) 80%, rgba(144,144,144,1) 100%);
     height: auto;
-    margin-top: 100px;
 }
+
 
   /* Nav Section */
 
@@ -102,7 +102,6 @@ footer {
     color: #fff;
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 60px;
 }
 
 nav .mainMenu {
@@ -134,7 +133,7 @@ nav .mainMenu .closeMenu, .icons i {
 a:hover, nav .mainMenu a:hover, footer .logo:hover {
     transition: 0.3s ease-in;
     transform: translateY(4px);
-    text-decoration: underline;
+    text-decoration: none;
     color: white;
   }
   .buttonContain a:hover, a:focus, a:active {
@@ -166,26 +165,43 @@ a:hover, nav .mainMenu a:hover, footer .logo:hover {
     text-decoration: underline;
   }
 
+ 
+
 
 /* Class Section */
 
-.slideItem {
-    border-radius: 20px;
-    padding: 100px;
-    max-width: 700px;
-    min-width: 300px;
-    margin: auto;
-    height: 500px;
-    color: white;
-    background: rgb(25,25,25);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+.hero_btn {
+    width: 300px;
+    height: 100px;
 }
+
+.display {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    font-size: 3rem;
+}
+
+.leader {
+    padding: 10px 0px 10px 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.jumbotron { 
+    height: 900px;
+    max-width: 100%;
+    background-image: url(/img/spaceback.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    justify-content: center;
+    text-align: center;
+
+}
+
 
 .logo {
     margin-bottom: 20px;
-  font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   padding: 16px 0 0 0;
   cursor: pointer;
     color: white;
@@ -200,22 +216,19 @@ a:hover, nav .mainMenu a:hover, footer .logo:hover {
     overflow:auto;
     width: 300px;
     text-align: left;
+    box-shadow: 5px 10px rgba(30, 30, 30, 0.5);
 }
 
 .light {
     background: rgb(224,224,224);
     color: black;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
-.carousel-inner {
-    margin: auto;
-}
 
 form.dark, .dark {
     color: white;
     background: rgb(25,25,25);
-    border: 2px solid rgb(27, 160, 73);
 }
 
 .fontSm {
@@ -235,11 +248,11 @@ form.dark, .dark {
 
 .form {
     background-color:rgb(224,224,224);
-    border:2px solid;
+    border: 1px solid black;
     padding: 40px 60px 40px 20px;
     line-height: 35px;
-    border-radius: 2rem;
-    margin: 10px 0 10px 0;
+    margin: 20px 0 10px 0;
+    box-shadow: 5px 10px rgba(30, 30, 30, 0.5);
 }
 
 .buttonContain {
@@ -256,37 +269,103 @@ form.dark, .dark {
     justify-content: center;
 }
 
-/* ID Section */
+.controls {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
 
 .aboutPg {
+    background-image: url(/img/moon.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
     background-color: black;
-    width: 500px;
-    height: 500px;
+    height: auto;
+    min-height: 800px;
     color: white;
     padding: 100px;
-    margin: 10px;
-    text-overflow: wrap;
+    word-break: break-word;
+    white-space: normal;
+}
+
+
+
+.btn-hero {
+    border-radius: 15px;
+    padding: 25px 25px 25px;
+    color: black;
+    background-color: rgb(27, 160, 73);
+    font-size: 25px;
+    text-decoration: none;
+    box-shadow: 5px 10px rgba(30, 30, 30, 0.5);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+.btn-hero:hover {
+    color: white;
+    font-size: 27px;
+    transition: ease-in .3s;
+}
+
+/* ID Section */
+
+
+#contactUs  {
+    background-color: rgb(224,224,224); 
+    margin-top: 90px;
+    margin-bottom: 90px;
+    padding: 20px;
+    box-shadow: 5px 10px rgba(30, 30, 30, 0.5);
+}
+
+#contactUs input {
+    width: 220px;
+    margin: 15px;
+}
+
+#contactUs label {
+    margin:15px;
+}
+
+#aboutText {
+    padding:20px 60px 0 60px;
+}
+
+#aboutHead {
+    margin-right: 300px;
+    margin-top: 200px;
 }
 
 #topPanel {
-    border-radius: 20px;
     padding: 10px;
     margin: auto;
     max-width: 600px;
+    box-shadow: 5px 10px rgba(30, 30, 30, 0.5);
 }
 #midButs {
-    border-radius: 10px;
     margin: auto;
+    margin-top: 10px;
     height: auto;
     width: auto;
     max-width: 300px;
     padding: 5px;
+    box-shadow: 5px 10px rgba(30, 30, 30, 0.5);
+}
+
+
+#topOfPage {
+    margin-top: 40px;
 }
 
  #botOfPage {
      margin: auto;
      width: 300px;
      padding-bottom: 20px;
+     margin-bottom: 40px;
+     box-shadow: 5px 10px rgba(30, 30, 30, 0.5);
+     border: 1px solid black;
  }
 
 #diceForm {
@@ -300,7 +379,7 @@ form.dark, .dark {
     padding: 20px;
     font-family: 'Montserrat', sans-serif;
     background-color:rgb(27, 170, 73);
-    border:rgb(43, 40, 40) 2px solid;
+    border:rgb(43, 40, 40) 1px solid;
     color:rgb(43, 40, 40);
 }
 
@@ -328,7 +407,7 @@ form.dark, .dark {
     text-align: center;
     justify-content: center;
     color: rgb(43, 40, 40);
-    border:rgb(43, 40, 40) solid 2px;
+    border:rgb(43, 40, 40) solid 1px;
     border-radius: 15px;
 }
 
@@ -369,6 +448,11 @@ form.dark, .dark {
 .plague {
     background-color: rgb(136, 132, 13);
 }
+.def {
+    background-color: white;
+}
+
+
 
   /* Media Queries */
 
@@ -394,8 +478,8 @@ form.dark, .dark {
 
     }
     .buttonContain {
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 10px;
+        margin-bottom: 15px;
     }
 }
 
@@ -407,6 +491,9 @@ form.dark, .dark {
     .buttonContain {
         grid-template: 1fr 1fr;
     }  
+    #aboutText {
+        padding: 0 280px 0 280px;
+    }
 }
 
 @media(max-width: 900px){
@@ -423,6 +510,15 @@ form.dark, .dark {
         background: rgb(25, 25, 25);
         transition: top 1s ease;
         display: none;
+    }
+
+    @media(max-width: 650px){
+        .aboutPg {
+            background-image: none;
+        }
+        #aboutHead {
+            margin: auto;
+        }
     }
 
     form label {

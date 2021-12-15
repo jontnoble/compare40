@@ -95,6 +95,12 @@ plague.addEventListener('click', () => {
   document.cookie="theme=plague";
 })
 
+def.addEventListener('click', () => {
+  body.removeAttribute('class');
+  body.classList.add('default');
+  document.cookie="theme=default";
+})
+
 
 function hasNum(killString) {
   let killNum = [];
@@ -438,7 +444,7 @@ function submitData(
   }
   if (autoHit === false) {
     document.getElementById("hRollT").innerText=`Hit rolls: ${hitArr}
-    Hits successful: ${hit}.`
+    Hits successful: ${hit}`
   }
   if (rerollHit1 === true) {
     document.getElementById("hReRollT").innerText=`Hit rerolls: ${reHitArr}`;

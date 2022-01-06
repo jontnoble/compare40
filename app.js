@@ -13,7 +13,7 @@ app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/img', express.static(__dirname + 'public/img'));
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
-app.use('/php', express.static(__dirname + 'public/php'));
+
 
 //Set Templating Engine
 app.use(expressLayouts);
@@ -35,13 +35,14 @@ app.get('/about', (req, res) => {
     res.render('about')
 });
 
-app.get('/contact', (req, res) => {
-    res.render('contact')
-});
-
 app.get('/rawpoints', (req, res) => {
     res.render('rawpoints')
 });
+
+app.get('/', (req, res) =>{
+    res.sendFile(__dirname + '/views/layouts/mainlay.ejs')
+})
+
 
 //cookies
 app.get('/themeultra', (req, res) => {

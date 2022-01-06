@@ -14,6 +14,7 @@ const body = document.body;
 
 
 console.log("Connected");
+
 const firstScore = document.getElementById('firstScore');
 const secondScore = document.getElementById('secondScore');
 const kill2 = document.getElementById("killT2");
@@ -43,7 +44,6 @@ const openMenu = document.querySelector('.openMenu');
 
 openMenu.addEventListener('click',show);
 closeMenu.addEventListener('click',close);
-
 
 //Light/dark Mode Toggle
 ldMode.addEventListener('click', () => {
